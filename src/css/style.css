@@ -1,0 +1,74 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+:root {
+  --didact: "Didact Gothic", sans-serif;
+  --noto: "Noto Serif JP", serif;
+  --noto-sans: "Noto Sans JP", sans-serif;
+  --yugo: "游ゴシック体", yugothic, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+.img-wrap {
+  max-width: fit-content;
+  width: 100%;
+}
+.img-wrap img {
+  width: 100%;
+}
+
+.pc-b {
+  display: block !important;
+}
+@media screen and (max-width: 767px) {
+  .pc-b {
+    display: none !important;
+  }
+}
+
+.sp-b {
+  display: none !important;
+}
+@media screen and (max-width: 767px) {
+  .sp-b {
+    display: block !important;
+  }
+}
+
+.pc-ib {
+  display: inline-block !important;
+}
+@media screen and (max-width: 767px) {
+  .pc-ib {
+    display: none !important;
+  }
+}
+
+.sp-ib {
+  display: none !important;
+}
+@media screen and (max-width: 767px) {
+  .sp-ib {
+    display: inline-block !important;
+  }
+}
+
+.pc-f {
+  display: flex !important;
+}
+@media screen and (max-width: 767px) {
+  .pc-f {
+    display: none !important;
+  }
+}
+
+.sp-f {
+  display: none !important;
+}
+@media screen and (max-width: 767px) {
+  .sp-f {
+    display: flex !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

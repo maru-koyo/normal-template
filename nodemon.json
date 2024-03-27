@@ -1,0 +1,5 @@
+{
+  "watch": ["src/common/includes"],
+  "ext": "html",
+  "exec": "vite"
+}

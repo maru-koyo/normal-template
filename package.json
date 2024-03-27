@@ -1,0 +1,17 @@
+{
+  "name": "vite-template",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "run-p nodemon watch:sass",
+    "nodemon": "nodemon",
+    "watch:sass": "sass --watch src"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.72.0",
+    "vite": "^4.5.3",
+    "vite-plugin-ssinc": "^1.0.9"
+  }
+}
