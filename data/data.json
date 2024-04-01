@@ -1,0 +1,42 @@
+{
+  "site": {
+    "url": "http://localhost",
+    "name": "サイト名",
+    "description": "サイトの説明",
+    "favicon": "/facicon.ico",
+    "appleTouchIcon": "/apple-touch-icon.png",
+    "logo": "/logo.svg",
+    "ogImg": "/ogp.png",
+    "tel": "000-0000-0000",
+    "address": {
+      "postalCode": "3702341",
+      "addressCountry": "日本",
+      "addressLocality": "群馬県",
+      "streetAddress": "富岡市下黒岩289"
+    }
+  },
+  "config": {
+    "head": true,
+    "structure": true
+  },
+  "/": {
+    "name": "トップ",
+    "title": "トップタイトル",
+    "description": "トップデスクリプション"
+  },
+  "/about/": {
+    "name": "アバウト",
+    "title": "アバウトタイトル",
+    "description": "アバウトデスクリプション"
+  },
+  "/about/details/": {
+    "name": "アバウト詳細",
+    "title": "アバウト詳細タイトル",
+    "description": "アバウト詳細デスクリプション"
+  },
+  "/about/details/sample.html": {
+    "name": "サンプル",
+    "title": "サンプルタイトル",
+    "description": "サンプルデスクリプション"
+  }
+}
