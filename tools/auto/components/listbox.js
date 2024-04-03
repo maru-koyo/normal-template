@@ -1,4 +1,4 @@
-import { getAfterLastStr } from "../utils/getAfterLastStr.js";
+import { getAfterLastStr } from "../../utils/getAfterLastStr.js";
 
 export function listBox(site, page, jsonFile, count) {
   const singleSplit = page.split("/");

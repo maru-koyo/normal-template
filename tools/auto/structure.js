@@ -1,5 +1,5 @@
-import { insertStructure } from "../components/insertStructure.js";
-import { listBox } from "../components/listbox.js";
+import { insertStructure } from "./components/insertStructure.js";
+import { listBox } from "./components/listbox.js";
 
 export function structure(site, jsonFile, page, count) {
   const data = {

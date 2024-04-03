@@ -1,4 +1,4 @@
-import { insertHead } from "../components/insertHead.js";
+import { insertHead } from "./components/insertHead.js";
 // ページごとに変化がなく、全ページ共通で入れるタグはSSIなどでファイル分割する方が良い->更新時にすべてのファイルをftpにアップする必要ないから
 
 export function head(site, currentPage, page, count, fileName) {

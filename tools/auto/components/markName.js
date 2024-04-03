@@ -1,4 +1,4 @@
-import { htmlCommentout } from "../utils/htmlCommentout.js";
+import { htmlCommentout } from "../../utils/htmlCommentout.js";
 
 const appName = "auto";
 const placeNames = ["head", "structure"];
