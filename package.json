@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "run-p nodemon watch:sass",
-    "build": "node data",
+    "build": "node tools/auto",
+    "diff": "bash tools/difference/archive.sh",
     "nodemon": "nodemon",
-    "zip": "bash data/archive.sh",
     "watch:sass": "sass --watch src"
   },
   "devDependencies": {

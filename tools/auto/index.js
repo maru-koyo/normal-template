@@ -1,11 +1,11 @@
 import fs from "fs";
 import { glob } from "glob";
-import { removeSubstring } from "./utils/removeSubstring.js";
+import { removeSubstring } from "../utils/removeSubstring.js";
 import { head } from "./head.js";
 import { structure } from "./structure.js";
-import { autoInsert } from "./components/markName.js";
+import { autoInsert } from "../components/markName.js";
 import { ignoreFiles } from "./ignoreHtml.js";
-import { getAfterLastStr } from "./utils/getAfterLastStr.js";
+import { getAfterLastStr } from "../utils/getAfterLastStr.js";
 
 const jsonFile = JSON.parse(fs.readFileSync("./data/data.json", "utf-8"));
 
