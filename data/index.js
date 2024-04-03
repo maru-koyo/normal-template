@@ -16,26 +16,27 @@ const htmls = await glob("src/**/*.html", { ignore: ignoreFiles });
 const site = jsonFile["site"];
 const config = jsonFile["config"];
 
-// --- 各ファイルごとに処理 ---
 for (const html of htmls) {
-  // --- 取得したファイルのルートパス取得
-
   let fileName = getAfterLastStr(html);
 
+  // jsonファイルで"/"はindex.html、"/sample.html"はsample.htmlと判断するための変数
   const replaceText = fileName === "index.html" ? "" : fileName;
 
+  // "/about/"などのjsonプロパティ（ルートパス））を取得する
   let page = html.replace("src", "").replace(fileName, replaceText);
 
+  //  windows Windowsとmacとのosの違いをなくすための式
   if (page.includes("\\")) {
     page = page.split("\\").join("/");
   }
 
-  // --- ルートパスの階層取得
+  // --- ルートパスの階層階層数取得
   const count = page.match(/\//g).length;
 
   // --- data.jsonから対象のAPIを取得 ---
   const currentPage = jsonFile[page];
 
+  // srcの中にhtmlはあるが、jsonにそのルートパスプロパティがない場合にスキップする。
   if (!currentPage) {
     console.error(
       `こちらのページの情報がないのでスキップします：${site.url + page}`
