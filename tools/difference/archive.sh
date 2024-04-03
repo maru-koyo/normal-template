@@ -21,4 +21,4 @@ DIRNAME=$(echo "$CURRENT" | awk -F'/' '{print $(NF-2)}')
 
 mixName="$time-$DIRNAME"
 
-git archive --prefix="$mixName/" main "$(git diff --name-only origin/main main --diff-filter=d -- ':(exclude)src/*' 'src/'*)" -o "tools/difference/$mixName.zip"
+git archive --prefix="$mixName/" main "$(git diff --name-only origin/main main --diff-filter=d ':(exclude)src' 'src/'*)" -o "tools/difference/$mixName.zip"
