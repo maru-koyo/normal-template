@@ -91,7 +91,9 @@ for (const html of htmls) {
 
   sitemapList.push(`<url>
 <loc>${site.url + page}</loc>
-<priority>${1 - 0.2 * (count - 1)}</priority>
+<priority>${
+    1 - 0.2 * (count - 1) !== 1 ? 1 - 0.2 * (count - 1) : "1.0"
+  }</priority>
 </url>
 `);
 
