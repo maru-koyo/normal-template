@@ -6,11 +6,8 @@ import { structure } from "./structure.js";
 import { autoInsert } from "./components/markName.js";
 import { ignoreFiles } from "./ignoreHtml.js";
 import { getAfterLastStr } from "../utils/getAfterLastStr.js";
-import { sitemap } from "./components/sitemap.js";
 
 const jsonFile = JSON.parse(fs.readFileSync("./tools/auto/data.json", "utf-8"));
-const sitemapList = [];
-let isCreateSiteMap = false;
 
 // --- 埋め込むhtmlを取得 ---
 const htmls = await glob("src/**/*.html", { ignore: ignoreFiles });
@@ -54,8 +51,6 @@ for (const html of htmls) {
 
   let existingHTML = fs.readFileSync(html, "utf-8");
 
-  const oldHtml = existingHTML;
-
   if (existingHTML.includes(autoInsert[0].title)) {
     existingHTML = removeSubstring(
       existingHTML,
@@ -84,33 +79,5 @@ for (const html of htmls) {
       `${insertStructure}`
     ));
 
-  const newHtml = existingHTML;
-
-  const noSpaceOld = oldHtml.replace(/\s+/g, "");
-  const noSpaceNew = newHtml.replace(/\s+/g, "");
-
-  sitemapList.push(`<url>
-<loc>${site.url + page}</loc>
-<priority>${
-    1 - 0.2 * (count - 1) !== 1 ? 1 - 0.2 * (count - 1) : "1.0"
-  }</priority>
-</url>
-`);
-
-  if (noSpaceOld !== noSpaceNew) {
-    isCreateSiteMap = true;
-  }
-
   fs.writeFileSync(html, existingHTML);
-}
-
-const insertSiteMap = sitemap(sitemapList);
-
-if (isCreateSiteMap) {
-  fs.writeFile("src/sitemap.xml", insertSiteMap, (err, data) => {
-    if (err) console.log(err);
-    else {
-      console.log("sitemapを生成しました");
-    }
-  });
 }

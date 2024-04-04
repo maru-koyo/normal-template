@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head
-    prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# website: https://ogp.me/ns/website#"
+    prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# article: https://ogp.me/ns/article#"
   >
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,26 +13,24 @@
     <meta property="og:image" content="/ogp.png" />
     <link rel="icon" href="/favicon.ico" />
     <meta property="og:site_name" content="サイト名" />
-    <title>トップタイトル</title>
-    <meta name="description" content="トップデスクリプション" />
-    <meta property="og:title" content="トップタイトル" />
-    <meta property="og:description" content="トップデスクリプション" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://localhost/" />
-    <link rel="canonical" href="http://localhost/" />
+    <title>リクルートタイトル</title>
+    <meta name="description" content="リクルートデスクリプション" />
+    <meta property="og:title" content="リクルートタイトル" />
+    <meta property="og:description" content="リクルートデスクリプション" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://localhost/recruit/" />
+    <link rel="canonical" href="http://localhost/recruit/" />
     <!-- **********ここから上には記載しないでください********** -->
-
-    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>hello</h1>
+    <h1>hellovccv</h1>
 
     <!-- auto-structure -->
     <!-- **********ここから下には記載しないでください********** -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
-        "@type": "WebSite",
+        "@type": "BreadcrumbList",
         "name": "サイト名",
         "logo": "http://localhost/logo.svg",
         "description": "サイトの説明",
@@ -44,7 +42,10 @@
           "addressLocality": "群馬県",
           "postalCode": "3702341",
           "addressCountry": "日本"
-        }
+        },
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "リクルート" }
+        ]
       }
     </script>
   </body>

@@ -10,11 +10,9 @@ export function head(site, currentPage, page, count, fileName) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="og:locale" content="ja_JP" />
-<link rel="apple-touch-icon-precomposed" href="${
-    site.url + site.appleTouchIcon
-  }" />
-<meta property="og:image" content="${site.url + site.ogImg}" />
-<link rel="icon" href="${site.url + site.favicon}" />
+<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
+<meta property="og:image" content="/ogp.png" />
+<link rel="icon" href="/favicon.ico" />
 <meta property="og:site_name" content="${site.name}" />
 <title>${currentPage.title}</title>
 <meta name="description" content="${currentPage.description}" />
