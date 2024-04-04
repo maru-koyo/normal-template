@@ -1,18 +1,12 @@
-import { insertHead } from "./components/insertHead.js";
+import { insertHead } from './components/insertHead.js'
 // ページごとに変化がなく、全ページ共通で入れるタグはSSIなどでファイル分割する方が良い->更新時にすべてのファイルをftpにアップする必要ないから
 
 export function head(site, currentPage, page, count, fileName) {
   const isFrontPage =
-    count === 1 && fileName === "index.html" ? "website" : "article";
+    count === 1 && fileName === 'index.html' ? 'website' : 'article'
   const data = `<html lang="ja">
 <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# ${isFrontPage}: https://ogp.me/ns/${isFrontPage}#">
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="og:locale" content="ja_JP" />
-<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
-<meta property="og:image" content="/ogp.png" />
-<link rel="icon" href="/favicon.ico" />
+<!--#include virtual="/common/include/header.html" -->
 <meta property="og:site_name" content="${site.name}" />
 <title>${currentPage.title}</title>
 <meta name="description" content="${currentPage.description}" />
@@ -21,6 +15,6 @@ export function head(site, currentPage, page, count, fileName) {
 <meta property="og:type" content="${isFrontPage}" />
 <meta property="og:url" content="${site.url + page}" />
 <link rel="canonical" href="${site.url + page}">
-`;
-  return insertHead(data);
+`
+  return insertHead(data)
 }

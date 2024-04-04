@@ -9,7 +9,7 @@
     "diff": "bash tools/difference/archive.sh",
     "nodemon": "nodemon",
     "auto": "node tools/auto",
-    "pre": "prettier --write 'src/**/*.{html,css,js}'",
+    "pre": "prettier --write 'src/**/*.html'",
     "watch:sass": "sass --watch src"
   },
   "devDependencies": {
