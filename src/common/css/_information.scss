@@ -4,11 +4,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
 :root {
-  --didact: "Didact Gothic", sans-serif;
   --noto: "Noto Serif JP", serif;
   --noto-sans: "Noto Sans JP", sans-serif;
-  --yugo: "游ゴシック体", yugothic, "游ゴシック Medium", "Yu Gothic Medium",
-    "游ゴシック", "Yu Gothic", sans-serif;
+  --yugo: "游ゴシック体", yugothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
 }
 
 // pc-first
@@ -34,32 +32,14 @@ $breakMap: (
 $default-min-bp: map-get($breakMap, md) - 1;
 $default-max-bp: map-get($breakMap, xl) - 1;
 
-@function clp(
-  $minFontSize,
-  $maxFontSize,
-  $minViewport: 768,
-  $maxViewport: 1200
-) {
+@function clp($minFontSize, $maxFontSize, $minViewport: 768, $maxViewport: 1200) {
   $fontSizeRate: $maxFontSize - $minFontSize;
   $viewportRate: $maxViewport - $minViewport;
-  $changingSize: math.div(
-    math.round(math.div($fontSizeRate, $viewportRate) * 10000),
-    100
-  );
-  $fixedSize: math.div(
-    math.round(
-      ($minFontSize - math.div($fontSizeRate, $viewportRate) * $minViewport) *
-        62.5
-    ),
-    1000
-  );
+  $changingSize: math.div(math.round(math.div($fontSizeRate, $viewportRate) * 10000), 100);
+  $fixedSize: math.div(math.round(($minFontSize - math.div($fontSizeRate, $viewportRate) * $minViewport) * 62.5), 1000);
   $minRemFontSize: math.div(math.round($minFontSize * 62.5), 1000);
   $maxRemFontSize: math.div(math.round($maxFontSize * 62.5), 1000);
-  @return clamp(
-    #{$minRemFontSize}rem,
-    #{$fixedSize}rem + #{$changingSize}vw,
-    #{$maxRemFontSize}rem
-  );
+  @return clamp(#{$minRemFontSize}rem, #{$fixedSize}rem + #{$changingSize}vw, #{$maxRemFontSize}rem);
 }
 
 @function pct($small, $big, $bool: true) {
