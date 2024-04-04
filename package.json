@@ -4,11 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "run-p start:common start:auto watch:sass",
+    "dev": "run-p watch:includes watch:sass",
     "build": "run-s auto pre",
     "diff": "bash tools/difference/archive.sh",
-    "start:common": "nodemon --config src/common/includes/nodemon.json",
-    "start:auto": "nodemon --config tools/auto/nodemon.json",
+    "watch:includes": "nodemon --config tools/nodemon/nodemon.json",
     "auto": "node tools/auto",
     "pre": "prettier --write 'src/**/*.html'",
     "watch:sass": "sass --watch src"

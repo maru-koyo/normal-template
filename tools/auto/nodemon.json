@@ -1,5 +1,0 @@
-{
-  "watch": ["tools/auto"],
-  "ext": "json",
-  "exec": "npm run build"
-}

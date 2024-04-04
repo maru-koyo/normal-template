@@ -2,7 +2,7 @@
   "site": {
     "url": "http://localhost",
     "name": "サイト名",
-    "description": "サイトの説明",
+    "description": "サイトの説明です",
     "logo": "/logo.svg",
     "tel": "000-0000-0001",
     "address": {
