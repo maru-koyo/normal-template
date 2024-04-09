@@ -1,6 +1,14 @@
 import { insertStructure } from "./components/insertStructure.js";
 import { listBox } from "./components/listbox.js";
 
+/**
+ * @param { jsonのsiteを取得 } site
+ * @param { jsonのファイルの内容を取得 } jsonFile
+ * @param { 個別ページのurlを取得 例/ "/about/" } page
+ * @param { 現在の階層数を取得 例/ "/about/" = 2 } count
+ * @returns { 構造化データに記載する内容 }
+ */
+
 export function structure(site, jsonFile, page, count) {
   const data = {
     "@context": "https://schema.org/",

@@ -1,5 +1,13 @@
 import { insertHead } from "./components/insertHead.js";
-// ページごとに変化がなく、全ページ共通で入れるタグはSSIなどでファイル分割する方が良い->更新時にすべてのファイルをftpにアップする必要ないから
+
+/**
+ * @param { jsonのsiteを取得 } site
+ * @param { jsonの個別ページを取得 } currentPage
+ * @param { 個別ページのurlを取得 例/ "/about/" } page
+ * @param { 現在の階層数を取得 例/ "/about/" = 2 } count
+ * @param { 最終階層以降のファイル名を取得 例/"sample.html" } fileName
+ * @returns { headに記載する内容 }
+ */
 
 export function head(site, currentPage, page, count, fileName) {
   const isFrontPage = count === 1 && fileName === "index.html" ? "website" : "article";
