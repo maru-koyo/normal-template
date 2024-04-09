@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "run-p watch:includes watch:sass",
     "build": "run-s auto pre",
-    "diff": "bash tools/difference/archive.sh",
+    "diff": "bash tools/diff/archive.sh",
     "watch:includes": "nodemon --config tools/nodemon/nodemon.json",
     "auto": "node tools/auto",
     "pre": "prettier --write 'src/**/*.html'",

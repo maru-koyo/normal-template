@@ -7,6 +7,13 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+license.txt
+readme.html
+xmlrpc.php
+wp-*
+wp-admin/
+wp-includes/
+
 node_modules
 dist
 dist-ssr

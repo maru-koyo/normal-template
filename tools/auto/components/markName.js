@@ -1,20 +1,15 @@
 import { htmlCommentout } from "../../utils/htmlCommentout.js";
 
-const appName = "auto";
-const placeNames = ["head", "structure"];
-const conection = "-";
+const placeNames = ["<!doctype html>", '<script type="application/ld+json">'];
 
 const autoInsert = [];
 
 for (const placeName of placeNames) {
+  let pos;
+  pos = placeName === placeNames[0] ? "上" : "下";
   const data = {
-    title: htmlCommentout(appName + conection + placeName),
-    start: htmlCommentout(
-      "**********ここから下には記載しないでください**********"
-    ),
-    end: htmlCommentout(
-      "**********ここから上には記載しないでください**********"
-    ),
+    title: placeName,
+    devide: htmlCommentout(`******************ここから${pos}には記載しないでください******************`),
   };
   autoInsert.push(data);
 }

@@ -49,19 +49,19 @@ for (const html of htmls) {
   let existingHTML = fs.readFileSync(html, "utf-8");
 
   if (existingHTML.includes(autoInsert[0].title)) {
-    existingHTML = removeSubstring(existingHTML, autoInsert[0].start, autoInsert[0].end);
+    existingHTML = removeSubstring(existingHTML, `<html lang="ja">`, autoInsert[0].devide);
   } else {
     config.head && (existingHTML = autoInsert[0].title + existingHTML);
   }
   if (existingHTML.includes(autoInsert[1].title)) {
-    existingHTML = removeSubstring(existingHTML, autoInsert[1].start, autoInsert[1].end);
+    existingHTML = removeSubstring(existingHTML, autoInsert[1].title, "</html>");
   } else {
-    config.structure && (existingHTML = existingHTML + autoInsert[1].title);
+    config.structure && (existingHTML = existingHTML + autoInsert[1].devide);
   }
 
   config.head && (existingHTML = existingHTML.replace(autoInsert[0].title, `${insertHead}`));
 
-  config.structure && (existingHTML = existingHTML.replace(autoInsert[1].title, `${insertStructure}`));
+  config.structure && (existingHTML = existingHTML.replace(autoInsert[1].devide, `${insertStructure}`));
 
   fs.writeFileSync(html, existingHTML);
 }
